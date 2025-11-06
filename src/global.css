@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ---------- BASE ---------- */
+@layer base {
+  /* Make the app fill the viewport and ensure no outer spacing */
+  html, body, #root { 
+    height: 100%; 
+  } /* full-height root containers */ 
+  body {
+    margin: 0; /* explicit zero margin as requested */
+    @apply bg-gray-100 text-gray-950  antialiased; /* site defaults */
+    font-family: "Inter", sans-serif;
+  }
+}
+
+/* ---------- UTILITIES (keep only what you use) ---------- */
+@layer utilities {
+  /* Hide scrollbar but keep scrolling (use on specific containers) */
+  .no-scrollbar::-webkit-scrollbar { display: none; }              /* Chrome/Safari/Edge */ 
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; } /* IE/Firefox */
+
+  /* Thin custom scrollbar (if you still want a visible one somewhere) */
+  .custom-scrollbar::-webkit-scrollbar { width: 3px; height: 3px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: #e5e7eb; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 9999px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+}
